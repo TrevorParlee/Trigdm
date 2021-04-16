@@ -215,7 +215,7 @@ const SignupFormik = withFormik({
   handleSubmit: (values, setToken) => {
     console.log(values);
     const REST_API_URL =
-      'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
+      'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
     fetch(REST_API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

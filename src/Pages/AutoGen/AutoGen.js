@@ -145,7 +145,7 @@ function AutoGen(props) {
   }
 
   const REST_API_URL =
-    'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/';
+    'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/';
   const handleChange = (event) => {
     if (event.target.value === 'allData') {
       setFieldType('');
@@ -155,11 +155,11 @@ function AutoGen(props) {
     setValue(event.target.value);
   };
   const REST_API_URL_CONS =
-    'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/';
+    'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/';
 
   //   This pulls the value from the API and creates the PLC list
   useEffect(() => {
-    const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/`;
+    const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/`;
     fetch(apiUrl)
       .then((res) => res.json())
       .then((schedules) => {
@@ -168,7 +168,7 @@ function AutoGen(props) {
   }, []);
 
   useEffect(() => {
-    const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/plc/alluniquecarid/`;
+    const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/plc/alluniquecarid/`;
     fetch(apiUrl)
       .then((res) => res.json())
       .then((plcs) => {
@@ -179,7 +179,7 @@ function AutoGen(props) {
   }, []);
 
   useEffect(() => {
-    const apiUrlCon = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
+    const apiUrlCon = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
     fetch(apiUrlCon)
       .then((res) => res.json())
       .then((cons) => {
@@ -188,7 +188,7 @@ function AutoGen(props) {
   }, []);
 
   function getConstraintList() {
-    const apiUrlCon = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
+    const apiUrlCon = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
     fetch(apiUrlCon)
       .then((res) => res.json())
       .then((cons) => {
@@ -197,7 +197,7 @@ function AutoGen(props) {
   }
 
   useEffect(() => {
-    const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/data_type/`;
+    const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/data_type/`;
     fetch(apiUrl)
       .then((res) => res.json())
       .then((dataTypes) => {
@@ -210,7 +210,7 @@ function AutoGen(props) {
       });
   }, []);
   useEffect(() => {
-    const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/clause/
+    const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/clause/
     `;
     fetch(apiUrl)
       .then((res) => res.json())
@@ -225,7 +225,7 @@ function AutoGen(props) {
   }, []);
 
   useEffect(() => {
-    const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/interval/
+    const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/interval/
     `;
     fetch(apiUrl)
       .then((res) => res.json())
@@ -588,7 +588,7 @@ function AutoGen(props) {
                           })
                           .then((data) => {
                             // HANDLE RESPONSE DATA
-                            const apiUrlCon = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
+                            const apiUrlCon = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
                             fetch(apiUrlCon)
                               .then((res) => res.json())
                               .then((cons) => {
@@ -753,7 +753,7 @@ function AutoGen(props) {
                                 fetch(REST_API_URL_CONS + r.id, {
                                   method: 'Delete',
                                 }).then((result) => {
-                                  const apiUrlCon = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
+                                  const apiUrlCon = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
                                   fetch(apiUrlCon)
                                     .then((res) => res.json())
                                     .then((cons) => {
@@ -1036,7 +1036,7 @@ function AutoGen(props) {
                               fetch(REST_API_URL + r.id, {
                                 method: 'Delete',
                               }).then((result) => {
-                                const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/`;
+                                const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/`;
                                 fetch(apiUrl)
                                   .then((res) => res.json())
                                   .then((schedules) => {
@@ -1090,7 +1090,7 @@ function AutoGen(props) {
                       })
                         .then((response) => {
                           if (response.ok) {
-                            const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/`;
+                            const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/`;
                             fetch(apiUrl)
                               .then((res) => res.json())
                               .then((schedules) => {

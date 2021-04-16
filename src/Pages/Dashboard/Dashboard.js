@@ -74,9 +74,9 @@ function Dashboard(props) {
   const [user_id, setUser_id] = useState(
     localStorage.getItem('userLoggedIn') || ''
   );
-  const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint/`;
+  const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint/`;
   const REST_API_URL =
-    'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint/';
+    'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint/';
   const handleChange = (event) => {
     if (event.target.value === 'allData') {
       setConstraint([]);
@@ -87,7 +87,7 @@ function Dashboard(props) {
     setValue(event.target.value);
   };
   useEffect(() => {
-    const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/plc/alluniquecarid/`;
+    const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/plc/alluniquecarid/`;
     fetch(apiUrl)
       .then((res) => res.json())
       .then((plcs) => {
@@ -106,7 +106,7 @@ function Dashboard(props) {
   // }, []);
 
   useEffect(() => {
-    const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/data_type/`;
+    const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/data_type/`;
     fetch(apiUrl)
       .then((res) => res.json())
       .then((dataTypes) => {
@@ -119,7 +119,7 @@ function Dashboard(props) {
       });
   }, []);
   useEffect(() => {
-    const apiUrl = `http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/clause/
+    const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/clause/
     `;
     fetch(apiUrl)
       .then((res) => res.json())
@@ -665,7 +665,7 @@ function Dashboard(props) {
                       {
                         if (r.constraintArray.length > 0) {
                           window.open(
-                            'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/report/filter?carId=' +
+                            'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/report/filter?carId=' +
                               r.carId +
                               '&startDate=' +
                               r.startDate +
@@ -676,7 +676,7 @@ function Dashboard(props) {
                           );
                         } else {
                           window.open(
-                            'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/report/filter?carId=' +
+                            'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/report/filter?carId=' +
                               r.carId +
                               '&startDate=' +
                               r.startDate +
@@ -726,7 +726,7 @@ function Dashboard(props) {
                       {
                         if (r.constraintArray.length > 0) {
                           window.open(
-                            'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/report/export?carId=' +
+                            'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/report/export?carId=' +
                               r.carId +
                               '&startDate=' +
                               r.startDate +
@@ -737,7 +737,7 @@ function Dashboard(props) {
                           );
                         } else {
                           window.open(
-                            'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/report/export?carId=' +
+                            'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/report/export?carId=' +
                               r.carId +
                               '&startDate=' +
                               r.startDate +

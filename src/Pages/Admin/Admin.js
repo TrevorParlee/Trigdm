@@ -35,7 +35,7 @@ function Admin(props) {
   let [temp, setTemp] = useState({});
   let [tempId, setTempId] = useState('');
   const REST_API_URL =
-    'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
+    'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -95,7 +95,7 @@ function Admin(props) {
       return user.id === id;
     });
     const REST_API_URL =
-      'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
+      'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
     fetch(REST_API_URL + a.id, {
       method: 'PUT',
       headers: {
@@ -143,7 +143,7 @@ function Admin(props) {
       return user.id === id;
     });
     const REST_API_URL =
-      'http://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
+      'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
     fetch(REST_API_URL + u.id, {
       method: 'PUT',
       headers: {
