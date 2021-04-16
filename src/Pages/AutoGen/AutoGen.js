@@ -345,30 +345,37 @@ function AutoGen(props) {
 
         {/* This is the Interval Remote Button */}
 
-        <Grid container direction='row' alignItems='flex-start'>
+        <Grid
+          container
+          direction='row'
+          alignItems='flex-start'
+          justify='center'
+        >
           <Grid item>
-            <div style={{ marginLeft: '250px', marginTop: '50px' }}>
+            <div style={{ marginTop: '50px', marginRight: '175px' }}>
               <h2>Select Interval</h2>
-              <FormControl component='interval'>
-                <RadioGroup
-                  aria-label='Interval'
-                  name='interval'
-                  value={radioInt}
-                  onClick={handleChangeRadioInt}
-                >
-                  <FormControlLabel
-                    value='2'
-                    control={<Radio />}
-                    label='Bi-Monthly'
-                  />
+              <div style={{ marginLeft: '50px' }}>
+                <FormControl component='interval'>
+                  <RadioGroup
+                    aria-label='Interval'
+                    name='interval'
+                    value={radioInt}
+                    onClick={handleChangeRadioInt}
+                  >
+                    <FormControlLabel
+                      value='2'
+                      control={<Radio />}
+                      label='Bi-Monthly'
+                    />
 
-                  <FormControlLabel
-                    value='1'
-                    control={<Radio />}
-                    label='Monthly'
-                  />
-                </RadioGroup>
-              </FormControl>
+                    <FormControlLabel
+                      value='1'
+                      control={<Radio />}
+                      label='Monthly'
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </div>
             </div>
           </Grid>
 
@@ -376,35 +383,42 @@ function AutoGen(props) {
           <Grid item>
             <div style={{ marginLeft: '50px', marginTop: '50px' }}>
               <h2>Select Contents of Report</h2>
-              <FormControl component='constraint'>
-                <RadioGroup
-                  aria-label='Constraints'
-                  name='constraints'
-                  value={radioCon}
-                  onClick={handleChangeRadioCon}
-                >
-                  <FormControlLabel
-                    value='selectAll'
-                    control={<Radio />}
-                    label='Select All Data'
-                  />
+              <div style={{ marginLeft: '70px' }}>
+                <FormControl component='constraint'>
+                  <RadioGroup
+                    aria-label='Constraints'
+                    name='constraints'
+                    value={radioCon}
+                    onClick={handleChangeRadioCon}
+                  >
+                    <FormControlLabel
+                      value='selectAll'
+                      control={<Radio />}
+                      label='Select All Data'
+                    />
 
-                  <FormControlLabel
-                    value='setConstraint'
-                    control={<Radio />}
-                    label='Set Constraint'
-                    onClick={handleChangeConstraintList}
-                  />
-                </RadioGroup>
-              </FormControl>
+                    <FormControlLabel
+                      value='setConstraint'
+                      control={<Radio />}
+                      label='Set Constraint'
+                      onClick={handleChangeConstraintList}
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </div>
             </div>
           </Grid>
         </Grid>
-        <Grid container direction='row' alignItems='flex-start'>
+        <Grid
+          container
+          direction='row'
+          alignItems='flex-start'
+          justify='center'
+        >
           {/* <div style={{ marginLeft: '250px', marginBottom: '30px' }}>
                 <h2>Select Car ID</h2>
               </div> */}
-          <div style={{ marginLeft: '250px' }}>
+          <div>
             <FormControl
               style={{ marginTop: '50px', width: '180px' }}
               variant='outlined'
@@ -438,11 +452,16 @@ function AutoGen(props) {
 
         {/* This is a Grid with the Select car ID, Select fields, select LTGT, enter amount */}
         {radioCon === 'setConstraint' ? (
-          <Grid container direction='row' alignItems='flex-start'>
+          <Grid
+            container
+            direction='row'
+            alignItems='flex-start'
+            justify='center'
+          >
             {/* Select Field */}
 
             <Grid item>
-              <div style={{ marginLeft: '250px', marginTop: '50px' }}>
+              <div style={{ marginTop: '50px' }}>
                 <FormControl
                   style={{ width: 200 }}
                   variant='outlined'
@@ -535,8 +554,13 @@ function AutoGen(props) {
         {/* This is where the constraint Box starts. 
         First the add constraint button and then the constraint box */}
         {radioCon === 'setConstraint' ? (
-          <Grid container direction='row' alignItems='flex-start'>
-            <div style={{ marginLeft: '250px', marginBottom: '10px' }}>
+          <Grid
+            container
+            direction='row'
+            alignItems='flex-start'
+            justify='center'
+          >
+            <div style={{ marginBottom: '10px' }}>
               {fieldType != '' && condition != '' && amount != '' ? (
                 <Button
                   className='addConstBtn'
@@ -636,18 +660,17 @@ function AutoGen(props) {
             container
             direction='row'
             alignItems='flex-start'
-            justify='flex-start'
+            justify='center'
           >
             <Grid
               container
               direction='row'
               alignItems='flex-start'
-              justify='flex-start'
+              justify='center'
             >
               {' '}
               <h2
                 style={{
-                  marginLeft: '250px',
                   marginBottom: '10px',
                 }}
               >
@@ -657,7 +680,6 @@ function AutoGen(props) {
             <div
               className='AutoconstBox'
               style={{
-                marginLeft: '250px',
                 marginBottom: '5px',
               }}
             >
@@ -782,13 +804,12 @@ function AutoGen(props) {
             container
             direction='row'
             alignContent='flex-start'
-            justify='flex-start'
+            justify='center'
             style={{ width: '100%', height: '100px' }}
           >
             <div
               className='AutotempconstBox'
               style={{
-                marginLeft: '250px',
                 marginBottom: '5px',
               }}
             >
@@ -866,9 +887,9 @@ function AutoGen(props) {
           container
           direction='row'
           alignItems='flex-start'
-          justify='flex-start'
+          justify='center'
         >
-          <div style={{ marginLeft: '250px' }}>
+          <div>
             <br />
             {selectedPLC != undefined &&
             selectedPLC != '' &&
@@ -933,15 +954,15 @@ function AutoGen(props) {
           container
           direction='row'
           alignItems='flex-start'
-          style={{ width: '90%' }}
+          justify='center'
         >
           <Grid
             container
             direction='row'
             alignItems='flex-start'
-            justify='flex-start'
+            justify='center'
           >
-            <h2 style={{ marginLeft: '250px' }}>List of Reports</h2>
+            <h2>List of Reports</h2>
           </Grid>
           <div className='AutoBottomDiv'>
             {newTrigger.map((r, i) => (
@@ -1002,7 +1023,12 @@ function AutoGen(props) {
                 {r.user_id == userId ? (
                   <TableRow>
                     <span>
-                      <Grid container direction='row' alignItems='flex-start'>
+                      <Grid
+                        container
+                        direction='row'
+                        alignItems='flex-start'
+                        justify='center'
+                      >
                         <Grid item style={{ width: '570px', margin: '2px' }}>
                           <div
                             style={{
@@ -1058,13 +1084,17 @@ function AutoGen(props) {
               </>
             ))}
           </div>{' '}
-          <Grid container direction='row' alignItems='flex-start'>
+          <Grid
+            container
+            direction='row'
+            alignItems='flex-start'
+            justify='center'
+          >
             {selectedPLC != undefined && selectedPLC != '' ? (
               <Button
                 className='AutoGenerateBTN'
                 variant='outlined'
                 style={{
-                  marginLeft: '250px',
                   marginBottom: '10px',
                   marginTop: '10px',
                   backgroundColor: '#00c853',
