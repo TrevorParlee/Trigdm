@@ -1155,7 +1155,7 @@ function AutoGen(props) {
                   height: '50px',
                   backgroundColor: ' lightgray',
                   cursor: 'not-allowed',
-                  marginLeft: '250px',
+
                   marginTop: '10px',
                   marginBottom: '10px',
                 }}
