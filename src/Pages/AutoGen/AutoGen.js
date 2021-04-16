@@ -144,6 +144,8 @@ function AutoGen(props) {
     }, []);
   }
 
+  // Calling from the URL to populate the list for the tables
+  //SRest API for schedule to send new schedules
   const REST_API_URL =
     'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/';
   const handleChange = (event) => {
@@ -154,10 +156,12 @@ function AutoGen(props) {
     }
     setValue(event.target.value);
   };
+
+  //Rest API for constraints for the schedules to send new constraints
   const REST_API_URL_CONS =
     'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/';
 
-  //   This pulls the value from the API and creates the PLC list
+  //   This pulls the value from the API and creates the schedule list
   useEffect(() => {
     const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/schedule/`;
     fetch(apiUrl)
@@ -167,6 +171,7 @@ function AutoGen(props) {
       });
   }, []);
 
+  // This pulls the value from the API and creates the PLC list
   useEffect(() => {
     const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/plc/alluniquecarid/`;
     fetch(apiUrl)
@@ -178,6 +183,7 @@ function AutoGen(props) {
       });
   }, []);
 
+  //This pulls the value from the API and creates the constraint list
   useEffect(() => {
     const apiUrlCon = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
     fetch(apiUrlCon)
@@ -187,15 +193,17 @@ function AutoGen(props) {
       });
   }, []);
 
-  function getConstraintList() {
-    const apiUrlCon = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
-    fetch(apiUrlCon)
-      .then((res) => res.json())
-      .then((cons) => {
-        setConstraintList(cons);
-      });
-  }
+  // //This pulls the value from the API and creates the PLC list
+  // function getConstraintList() {
+  //   const apiUrlCon = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint_schedule/`;
+  //   fetch(apiUrlCon)
+  //     .then((res) => res.json())
+  //     .then((cons) => {
+  //       setConstraintList(cons);
+  //     });
+  // }
 
+  //This pulls the value from the API and creates the list for the different fields
   useEffect(() => {
     const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/data_type/`;
     fetch(apiUrl)
@@ -209,6 +217,8 @@ function AutoGen(props) {
         setDataTypes(dataTypes);
       });
   }, []);
+
+  //This pulls the value from the API and creates the Less than or Greater than list
   useEffect(() => {
     const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/clause/
     `;
@@ -224,6 +234,7 @@ function AutoGen(props) {
       });
   }, []);
 
+  //This pulls the value from the API and creates the Interval list
   useEffect(() => {
     const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/interval/
     `;
@@ -244,6 +255,7 @@ function AutoGen(props) {
 
   return (
     <>
+      {/* Header and side bar */}
       <div
         style={{
           backgroundColor: 'rgb(11, 180, 95)',
@@ -551,8 +563,7 @@ function AutoGen(props) {
           </Grid>
         ) : null}
 
-        {/* This is where the constraint Box starts. 
-        First the add constraint button and then the constraint box */}
+        {/* This is where the constraint Box starts.  */}
         {radioCon === 'setConstraint' ? (
           <Grid
             container
@@ -584,7 +595,8 @@ function AutoGen(props) {
                     {
                       console.log(newConstraint);
                     }
-                    //e.preventDefault();
+
+                    //After adding a constraint it is sent to the database
 
                     newConstraint.map((t, i) => {
                       {
@@ -655,6 +667,8 @@ function AutoGen(props) {
             </div>
           </Grid>
         ) : null}
+
+        {/* List of constraints to chose from populated from the database */}
         {radioCon === 'setConstraint' ? (
           <Grid
             container
@@ -799,6 +813,8 @@ function AutoGen(props) {
             </div>{' '}
           </Grid>
         ) : null}
+
+        {/* List of constraints selected for the new report */}
         {checked.length > 0 ? (
           <Grid
             container
@@ -882,6 +898,7 @@ function AutoGen(props) {
         ) : null}
 
         {/* This is the end of the constraints box section */}
+        {/* List of already scheduled reports and where new reports will be added */}
 
         <Grid
           container
@@ -965,6 +982,8 @@ function AutoGen(props) {
             <h2>List of Reports</h2>
           </Grid>
           <div className='AutoBottomDiv'>
+            {/* List of new reports to be sent to the data base */}
+
             {newTrigger.map((r, i) => (
               <>
                 {r.user_id == userId ? (
@@ -1018,6 +1037,7 @@ function AutoGen(props) {
                 ) : null}
               </>
             ))}
+            {/* List of already scheduled reports pulled from the API */}
             {trigger.map((r, i) => (
               <>
                 {r.user_id == userId ? (
@@ -1084,6 +1104,7 @@ function AutoGen(props) {
               </>
             ))}
           </div>{' '}
+          {/* Schedule report button */}
           <Grid
             container
             direction='row'

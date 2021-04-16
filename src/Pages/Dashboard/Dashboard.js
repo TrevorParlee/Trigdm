@@ -74,6 +74,9 @@ function Dashboard(props) {
   const [user_id, setUser_id] = useState(
     localStorage.getItem('userLoggedIn') || ''
   );
+
+  // List of API calls to populate fields/lists
+
   const apiUrl = `https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint/`;
   const REST_API_URL =
     'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/constraint/';
@@ -137,6 +140,7 @@ function Dashboard(props) {
 
   return (
     <>
+      {/* Start of the Template */}
       <div
         style={{
           backgroundColor: 'rgb(11, 180, 95)',
@@ -206,6 +210,7 @@ function Dashboard(props) {
               textDecoration: 'none',
             }}
           >
+            <DashboardIcon />
             Auto Generated Report
           </Link>
           <div style={{ flexGrow: '1' }}></div>
@@ -232,6 +237,9 @@ function Dashboard(props) {
             <ExitToAppIcon /> Log Out
           </Link>
         </div>
+
+        {/* Start of the selection process */}
+        {/* Seletcing the Car ID */}
 
         <Grid container direction='row' justify='space-evenly'>
           <div style={{ marginLeft: '200px' }}>
@@ -284,6 +292,7 @@ function Dashboard(props) {
               </optgroup>
             </select> */}
           </div>{' '}
+          {/* Selection of dates  */}
           <div style={{ width: '300px' }}>
             <h2>Select Start Date</h2>
             <TextField
@@ -323,7 +332,7 @@ function Dashboard(props) {
 
         <div style={{ flexGrow: '1' }}></div>
 
-        {/* <Grid container direction="row" justify="space-evenly"> */}
+        {/* Field Selection for constraints */}
 
         <div
           className='bollet'
@@ -499,6 +508,9 @@ function Dashboard(props) {
             ) : (
               <div></div>
             )}
+
+            {/* Selected constraints goes in the constraint box */}
+
             {value !== 'allData' ? <h2>Selected Constraints</h2> : null}
             {value !== 'allData' ? (
               <div className='costraintDiv'>
@@ -587,6 +599,9 @@ function Dashboard(props) {
           </div>
         </Grid>
       </Grid>
+
+      {/* Reports section */}
+
       <Grid container direction='row' justify='space-evenly'>
         <Grid container direction='row' justify='space-evenly'>
           <h2>Selected Reports</h2>
@@ -662,6 +677,7 @@ function Dashboard(props) {
                         });
                       }
 
+                      //Opening window with PDF
                       {
                         if (r.constraintArray.length > 0) {
                           window.open(

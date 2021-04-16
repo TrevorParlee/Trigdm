@@ -94,6 +94,8 @@ function Admin(props) {
     const a = UserInfo.find((user) => {
       return user.id === id;
     });
+
+    // Pulling information from Users table from the API
     const REST_API_URL =
       'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
     fetch(REST_API_URL + a.id, {
@@ -142,6 +144,8 @@ function Admin(props) {
     const u = UserInfo.find((user) => {
       return user.id === id;
     });
+
+    // Rest API for sending info to the API
     const REST_API_URL =
       'https://backendowner-env.eba-mhuzfgmk.us-east-2.elasticbeanstalk.com/users/';
     fetch(REST_API_URL + u.id, {
