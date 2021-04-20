@@ -58,6 +58,7 @@ function Dashboard(props) {
   let [picked, setPicked] = useState(false);
   let [dataTypes, setDataTypes] = useState([]);
   let [conditions, setConditions] = useState([]);
+  let [contListArray, setContListArray] = useState([]);
   let [constraintId, setConstraintId] = useState([]);
   let constr = {};
   let [fieldTypeLookUp, setFieldTypeLookUp] = useState(new Map());
@@ -576,9 +577,12 @@ function Dashboard(props) {
                     carId: selectedPLC,
                     startDate: fromDate,
                     finishDate: toDate,
+                    contListArray: [...triList],
                     constraintArray: [...constraint],
                   };
+                  console.log(trig);
                   console.log(trig.constraintArray);
+                  console.log(trig.contListArray);
                   trigger.push(trig);
 
                   setTrigger([...trigger]);
@@ -656,8 +660,10 @@ function Dashboard(props) {
                     onClick={(e) => {
                       e.preventDefault();
                       console.log(triList.length);
+                      console.log(r.contListArray.length);
+                      console.log(r.contListArray);
                       {
-                        triList.map((a) => {
+                        r.contListArray.map((a) => {
                           fetch(apiUrl, {
                             method: 'POST',
                             headers: {
@@ -719,7 +725,7 @@ function Dashboard(props) {
                     onClick={(e) => {
                       e.preventDefault();
                       {
-                        triList.map((a) => {
+                        r.contListArray.map((a) => {
                           fetch(apiUrl, {
                             method: 'POST',
                             headers: {
