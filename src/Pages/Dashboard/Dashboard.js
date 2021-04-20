@@ -552,6 +552,8 @@ function Dashboard(props) {
                         onClick={(e) => {
                           constraint.splice(i, 1);
                           setConstraint([...constraint]);
+                          triList.splice(i, 1);
+                          setTriList([...triList]);
                         }}
                       >
                         Remove
