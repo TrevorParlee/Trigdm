@@ -586,6 +586,8 @@ function Dashboard(props) {
                   trigger.push(trig);
 
                   setTrigger([...trigger]);
+                  setTriList([]);
+                  setConstraint([]);
                 }}
               >
                 Add Report
