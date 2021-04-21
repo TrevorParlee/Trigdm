@@ -1063,7 +1063,7 @@ function AutoGen(props) {
                           ) : (
                             <span> Interval : Bi-Monthly</span>
                           )}
-                          {r.constraint_id !== -1 ? (
+                          {r.constraint_id !== '-1' ? (
                             <span> Constraint ID: {r.constraint_id}</span>
                           ) : null}
                         </Grid>
